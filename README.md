@@ -1,16 +1,6 @@
 # doubancomment
-爬取豆瓣短评并进行词云图分析和情感分析
-词云图分析和情感分析的部分
+#爬取豆瓣短评并进行词云图分析和情感分析
 
-
-一、分词和词云图生成
-实现功能——通过jieba对用户导入的文本文档进行分词并去除停用词，再用wordcloud和matplotlib生成词云图
-设计亮点——用户自选文本文档、词云底图、词云图尺寸、词云图命名，具有较广泛的适用性
-         利用停用词表尽量去除没有分析意义的代词、助词、语气词、冠词，提高词云图的质量
-         
-
-
-'''
 from os import path 
 import jieba
 import matplotlib.pyplot as plt
@@ -58,15 +48,6 @@ wc.to_file(ciyun_name)
 plt.imshow(wc)
 plt.axis('off')
 plt.show()
-
-
-
-
-二、情感分析和统计图呈现
-实现功能——对用户导入的文本文档进行情感分析并输出情感得分分布的条形统计图
-设计亮点——文件文本可以用户自己输入，代码具有广泛适用性；
-          
-
 from snownlp import SnowNLP
 #用户输入情感分析的文本文档，使代码具有开放性
 textfile = input("请给爬取的数据放入的txt文件命名（要加后缀，只能是txt文件，如comment.txt。txt文件会被存在本代码所在的文件目录中，如果您想要更改位置，可以在文件名前加上绝对路径):")
@@ -95,4 +76,5 @@ plt.xlabel('Sentiments Probability')
 plt.ylabel('Quantity')
 plt.title('Analysis of Sentiments')
 plt.show()
+
 
